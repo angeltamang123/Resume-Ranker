@@ -7,6 +7,11 @@ json_file_path = '/home/angel-tamang/Resume-Ranker/data/jd/web_developer.json'
 with open(json_file_path, 'r') as file:
     data = json.load(file)
 
+# Loop through the keys and count the number of items if the value is a list
+for key, value in data.items():
+    if isinstance(value, list):  # Check if the value is an array
+        print(f"Array '{key}' contains {len(value)} items.")
+
 # Dictionary to store unique items based on job name and company (or other fields)
 unique_jobs = {}
 
